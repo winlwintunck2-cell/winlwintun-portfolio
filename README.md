@@ -320,33 +320,19 @@ function sendMsg(){
 
 </script>
 
-</body>ကျနော့်အနေဖြင့်ဤဝက်စိုက်ဖန်တီးရခြင်းမှာနောင်တွင်ချောင်းကန်ကျေးရွာအားလွယ်ကူစွာလာရောက်လည်ပတ်နိုင်ရေးမြန်ဆန်စေရန်အတွက်ကြိုးစားဖန်တိးနေခြင်းပင်ဖြစ်သောကြောင့်လင့်အားကူးယူသိမ်းစဲထားခြင်းဖြင့်မကြာခနဝင်ရောက်ရန်ဖိတ်ကြားအပ်ပါသည်
-</html>/* LIGHT MODE */
-.light-mode{
-    background: #f5f7ff !important;
-    color: #111 !important;
+</body>ကျနော့်အနေဖြင့်ဤဝက်စိုက်ဖန်တီးရခြင်းမှာနောင်တွင်ချောင်းကန်ကျေးရွာအားလွယ်ကူစွာလာရောက်လည်ပတ်နိုင်ရေးမြန်ဆန်စေရန်အတွက်ကြိုးစားဖန်တိးနေခြင်းပင်ဖြစ်သောကြောင့်လင့်အားကူးယူသိမ်းစဲထားခြင်းဖြင့်မကြာခနဝင်ရောက်ရန်ဖိတ်ကြားအပ်ပါသည်။
+</html><script>
+function toggleMode(){
+   ...
 }
+</script>function toggleMode(){
+    document.body.classList.toggle("light-mode");
 
-.light-mode .card{
-    background: rgba(0,0,0,0.05) !important;
-    color:#111;
-}
+    let btn = document.getElementById("modeBtn");
 
-.light-mode header{
-    background: rgba(255,255,255,0.7) !important;
-}
-
-/* button style */
-#modeBtn{
-    position:fixed;
-    top:15px;
-    right:15px;
-    padding:10px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-    background:#38bdf8;
-    color:black;
-    font-size:16px;
-    z-index:9999;
+    if(document.body.classList.contains("light-mode")){
+        btn.innerHTML = "☀️";
+    }else{
+        btn.innerHTML = "🌙";
+    }
 }
