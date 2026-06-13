@@ -201,18 +201,27 @@ header{
     border:none;
 }
 
+/* FOOTER TEXT STYLE */
+.footer-text {
+    text-align: center;
+    max-width: 420px;
+    margin: 40px auto 20px auto;
+    padding: 0 20px;
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- LOADING -->
 <div id="loading">
     <div class="spinner"></div>
     <p>Loading...</p>
 </div>
 
-<!-- INTRO -->
 <div id="intro">
     <div class="intro-content">
         <h1>Win Lwin Tun</h1>
@@ -227,7 +236,7 @@ header{
 
 <div class="hero">
     <h1>Pro Max Developer</h1>
-    <p>Modern • ချောင်းကန်သား • Creative</p>
+    <p>ကိုကုလား • ချောင်းကန်သား • ဇိးကုန်းမြို့အနီးချောင်းကန်ရွာ</p>
 </div>
 
 <div class="card">
@@ -320,22 +329,9 @@ function sendMsg(){
 
 </script>
 
-</body>ကျနော့်အနေဖြင့်ဤဝက်စိုက်ဖန်တီးရခြင်းမှာနောင်တွင်ချောင်းကန်ကျေးရွာအားလွယ်ကူစွာလာရောက်လည်ပတ်နိုင်ရေးမြန်ဆန်စေရန်အတွက်ကြိုးစားဖန်တိးနေခြင်းပင်ဖြစ်သောကြောင့်လင့်အားကူးယူသိမ်းစဲထားခြင်းဖြင့်မကြာခနဝင်ရောက်ရန်ဖိတ်ကြားအပ်ပါသည်။
+<p class="footer-text">
+    ကျနော့်အနေဖြင့်ဤဝက်စိုက်ဖန်တီးရခြင်းမှာနောင်တွင်ချောင်းကန်ကျေးရွာအားလွယ်ကူစွာလာရောက်လည်ပတ်နိုင်ရေးမြန်ဆန်စေရန်အတွက်ကြိုးစားဖန်တိးနေခြင်းပင်ဖြစ်သောကြောင့်လင့်အားကူးယူသိမ်းစဲထားခြင်းဖြင့်မကြာခနဝင်ရောက်ရန်ဖိတ်ကြားအပ်ပါသည်။
+</p>
 
+</body>
 </html>
-<script>
-    <button id="modeBtn" onclick="toggleMode()">🌙</button>
-function toggleMode(){
-   ...
-}
-</script>function toggleMode(){
-    document.body.classList.toggle("light-mode");
-
-    let btn = document.getElementById("modeBtn");
-
-    if(document.body.classList.contains("light-mode")){
-        btn.innerHTML = "☀️";
-    }else{
-        btn.innerHTML = "🌙";
-    }
-}
