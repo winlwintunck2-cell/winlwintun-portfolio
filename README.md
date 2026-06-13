@@ -242,7 +242,7 @@ header{
 <div class="card">
     <a class="btn" href="tel:0824542317">📞 Call</a>
     <a class="btn" href="https://facebook.com" target="_blank">Facebook</a>
-    <a class="btn" href="https://t.me" target="_blank">Telegram</a>
+    <a class="btn" href="https://t.me" target="_blank">Telegram</a>@winlwin1500</a>
 </div>
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
