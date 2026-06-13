@@ -240,9 +240,9 @@ header{
 </div>
 
 <div class="card">
-    <a class="btn" href="tel:0824542317">📞 Call</a>
-    <a class="btn" href="https://facebook.com" target="_blank">Facebook</a>
-    <a class="btn" href="https://t.me/winlwin1500" target="_blank">Telegram</a>@winlwin1500</a>
+    <a class="btn" href="tel:0824542317">📞☎️ Call</a>
+    <a class="btn" href="https://facebook.com" target="_blank">🇲🇲 Facebook</a>
+    <a class="btn" href="https://t.me/winlwin1500" target="_blank">📩Telegram</a>
 </div>
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
