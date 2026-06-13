@@ -4,17 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Me | Win Lwin Tun</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-    body{ margin:0; font-family:Arial; background:linear-gradient(135deg,#0f172a,#111827); color:white; text-align:center; padding:20px; }
-    nav { margin: 20px 0; }
-    .nav-link { color: #38bdf8; text-decoration: none; padding: 10px; font-weight: bold; }
-    .nav-link:hover { color: #f472b6; }
-    .card { background:rgba(255,255,255,0.06); margin:20px auto; width:90%; max-width:420px; padding:20px; border-radius:15px; text-align:left; line-height: 1.6; }
-    h1 { color: #38bdf8; margin-top: 30px;}
+
+/* ================= LOADING STYLE ================= */
+#loading{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#0f172a;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    z-index:999999;
+}
+
+.spinner{
+    width:50px;
+    height:50px;
+    border:5px solid #333;
+    border-top:5px solid #38bdf8;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* ================= MAIN STYLE ================= */
+body{ 
+    margin:0; 
+    font-family:Arial; 
+    background:linear-gradient(135deg,#0f172a,#111827); 
+    color:white; 
+    text-align:center; 
+    padding:20px; 
+}
+
+nav { 
+    margin: 20px 0; 
+}
+
+.nav-link { 
+    color: #38bdf8; 
+    text-decoration: none; 
+    padding: 10px; 
+    font-weight: bold; 
+}
+
+.nav-link:hover { 
+    color: #f472b6; 
+}
+
+.card { 
+    background:rgba(255,255,255,0.06); 
+    margin:20px auto; 
+    width:90%; 
+    max-width:420px; 
+    padding:25px; 
+    border-radius:20px; 
+    text-align:left; 
+    line-height: 1.8;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 { 
+    color: #38bdf8; 
+    margin-top: 30px;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.highlight {
+    color: #facc15;
+    font-weight: bold;
+}
+
 </style>
 </head>
 <body>
+
+<div id="loading">
+    <div class="spinner"></div>
+    <p>Loading About Me...</p>
+</div>
 
 <nav>
     <a href="index.html" class="nav-link">🏠 Home</a> | 
@@ -22,11 +103,24 @@
 </nav>
 
 <h1>About Me</h1>
+
 <div class="card">
-    <h3>Win Lwin Tun (Pro Max Developer)</h3>
+    <h3 style="color:#38bdf8; margin-top:0;">Win Lwin Tun</h3>
+    <p><span class="highlight">Pro Max Developer</span></p>
     <p>ကျွန်တော်ကတော့ နည်းပညာနဲ့ Creative Design တွေကို စိတ်ဝင်စားတဲ့ Developer တစ်ယောက် ဖြစ်ပါတယ်။ ခေတ်မီပြီး လှပတဲ့ ဝက်ဘ်ဆိုက်တွေကို ဖန်တီးရတာ ဝါသနာပါပါတယ်။</p>
-    <p><b>နေရပ်:</b> ချောင်းကန်ကျေးရွာ</p>
+    <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:20px 0;">
+    <p><b>📍 နေရပ်:</b> ချောင်းကန်ကျေးရွာ</p>
+    <p><b>🚀 ဝါသနာ:</b> Web Design, Pro Max UI</p>
 </div>
+
+<script>
+/* LOADING REMOVE LOGIC */
+window.addEventListener("load",()=>{
+    setTimeout(()=>{
+        document.getElementById("loading").style.display="none";
+    },600); // 0.6 စက္ကန့်ကြာရင် Loading ပျောက်သွားမယ်
+});
+</script>
 
 </body>
 </html>
