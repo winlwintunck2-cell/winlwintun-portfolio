@@ -9,7 +9,7 @@
 
 <style>
 
-/* ================= LOADINGမြန်မာနိုင်ငံ ကမို့ကြာနေတာနေမှာပါ😝 ================= */
+/* ================= LOADING ================= */
 #loading{
     position:fixed;
     top:0;
@@ -227,7 +227,7 @@ header{
 
 <div class="hero">
     <h1>Pro Max Developer</h1>
-    <p>Modern • Clean • Creative</p>
+    <p>Modern • ချောင်းကန်သား • Creative</p>
 </div>
 
 <div class="card">
@@ -312,7 +312,7 @@ function sendMsg(){
     document.getElementById("messages").innerHTML += "👤 "+msg+"<br>";
 
     setTimeout(()=>{
-        document.getElementById("messages").innerHTML += "👨‍💻 Dev reply<br>";
+        document.getElementById("messages").innerHTML += "👨‍💻 မြန်မာလိုကြိးလာပို့နေတာဟ<br>";
     },500);
 
     input.value="";
@@ -320,5 +320,43 @@ function sendMsg(){
 
 </script>
 
-</body>
+</body>function toggleMode(){
+    document.body.classList.toggle("light-mode");
+
+    let btn = document.getElementById("modeBtn");
+
+    if(document.body.classList.contains("light-mode")){
+        btn.innerHTML = "☀️";
+    }else{
+        btn.innerHTML = "🌙";
+    }
+}/* LIGHT MODE */
+.light-mode{
+    background: #f5f7ff !important;
+    color: #111 !important;
+}
+
+.light-mode .card{
+    background: rgba(0,0,0,0.05) !important;
+    color:#111;
+}
+
+.light-mode header{
+    background: rgba(255,255,255,0.7) !important;
+}
+
+/* button style */
+#modeBtn{
+    position:fixed;
+    top:15px;
+    right:15px;
+    padding:10px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#38bdf8;
+    color:black;
+    font-size:16px;
+    z-index:9999;
+}
 </html>
