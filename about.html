@@ -71,7 +71,7 @@ h1{
     margin-top:60px;
 }
 
-/* STORY TEXT */
+/* TEXT */
 p{
     max-width:800px;
     margin:20px auto;
@@ -93,6 +93,7 @@ p{
     object-fit:cover;
     border-radius:12px;
     border:2px solid #38bdf8;
+    cursor:pointer;
     transition:0.3s;
 }
 
@@ -115,7 +116,28 @@ p{
     z-index:99999;
 }
 
-/* FADE BACKGROUND */
+/* LIGHTBOX */
+#lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+    border:2px solid #38bdf8;
+}
+
+/* SMOOTH */
 html{
     scroll-behavior:smooth;
 }
@@ -134,8 +156,8 @@ html{
     <p>Loading Story...</p>
 </div>
 
-<!-- 🔊 VOICE BUTTON -->
-<button id="voiceBtn" onclick="readStory()">🔊 Read Story</button>
+<!-- 🔊စာမဖက်ပဲအသံဖြင့်ရွာအကြောင်းနားဆင်ရန် VOICE BUTTON -->
+<button id="voiceBtn" onclick="readStory()">🔊 Read</button>
 
 <!-- NAV -->
 <nav>
@@ -146,7 +168,7 @@ html{
 <!-- TITLE -->
 <h1>ချောင်းကန်ရွာ၏အကြောင်း</h1>
 
-<!-- STORY -->
+<!-- TEXT -->
 <p>
 ဤသာယာသောရွာလေးတွင် ကျောင်းကြီး ရွှေကျောင်းဟာသော ဘုန်းတော်ကြီးနှစ်ကျောင်းတည်ရှိလေသည်။
 </p>
@@ -157,6 +179,11 @@ html{
     <img src="photo2.jpg">
     <img src="photo3.jpg">
     <img src="photo4.jpg">
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImg()">
+    <img id="lightboxImg">
 </div>
 
 <script>
@@ -208,19 +235,44 @@ function draw(){
 
 draw();
 
-/* ================= VOICE FIX (WORKING VERSION) ================= */
-function readStory(){
+/* ================= AUTO VOICE ================= */
+window.addEventListener("load",()=>{
+    setTimeout(()=>{
+        let text = "ချောင်းကန်ရွာ၏အကြောင်း။ ဤသာယာသောရွာလေးတွင် ကျောင်းကြီး ရွှေကျောင်းဟူသော ဘုန်းတော်ကြီးနှစ်ကျောင်းတည်ရှိလေသည်။";
 
+        let speech = new SpeechSynthesisUtterance(text);
+        speech.rate = 0.9;
+        speech.pitch = 1;
+
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(speech);
+    },1500);
+});
+
+/* ================= MANUAL VOICE ================= */
+function readStory(){
     let text = "ချောင်းကန်ရွာ၏အကြောင်း။ ဤသာယာသောရွာလေးတွင် ကျောင်းကြီး ရွှေကျောင်းဟာသော ဘုန်းတော်ကြီးနှစ်ကျောင်းတည်ရှိလေသည်။";
 
     let speech = new SpeechSynthesisUtterance(text);
-
     speech.rate = 0.9;
     speech.pitch = 1;
-    speech.volume = 1;
 
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(speech);
+}
+
+/* ================= IMAGE ZOOM ================= */
+let imgs = document.querySelectorAll(".gallery img");
+
+imgs.forEach(img=>{
+    img.addEventListener("click",()=>{
+        document.getElementById("lightbox").style.display="flex";
+        document.getElementById("lightboxImg").src = img.src;
+    });
+});
+
+function closeImg(){
+    document.getElementById("lightbox").style.display="none";
 }
 
 </script>
