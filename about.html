@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me | Win Lwin Tun</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>About | Win Lwin Tun</title>
 
 <style>
 
-/* ================= LOADING STYLE ================= */
+/* ================= LOADING ================= */
 #loading{
     position:fixed;
     top:0;
@@ -22,7 +20,7 @@
     justify-content:center;
     align-items:center;
     color:white;
-    z-index:999999;
+    z-index:9999;
 }
 
 .spinner{
@@ -39,112 +37,89 @@
     100%{transform:rotate(360deg);}
 }
 
-/* ================= INTRO ================= */
-#intro{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#0f172a;
+/* ================= MAIN ================= */
+body{
+    margin:0;
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#111827);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* TITLE */
+h1{
+    color:#38bdf8;
+    margin-top:80px;
+    font-size:2rem;
+    text-shadow:0 0 10px rgba(56,189,248,0.3);
+}
+
+/* GALLERY */
+.gallery{
     display:flex;
+    flex-wrap:wrap;
+    gap:10px;
     justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:999998;
-    animation:fadeOut 1.8s ease forwards;
-    animation-delay:2.5s;
+    margin-top:20px;
 }
 
-@keyframes fadeOut{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-
-/* ================= MAIN STYLE ================= */
-body{ 
-    margin:0; 
-    font-family:Arial; 
-    background:linear-gradient(135deg,#0f172a,#111827); 
-    color:white; 
-    text-align:center; 
-    padding:20px; 
+.gallery img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid #38bdf8;
+    transition:0.3s;
 }
 
-nav { 
-    margin: 20px 0; 
+.gallery img:hover{
+    transform:scale(1.05);
 }
 
-.nav-link { 
-    color: #38bdf8; 
-    text-decoration: none; 
-    padding: 10px; 
-    font-weight: bold; 
-}
-
-.nav-link:hover { 
-    color: #f472b6; 
-}
-
-.card { 
-    background:rgba(255,255,255,0.06); 
-    margin:20px auto; 
-    width:90%; 
-    max-width:420px; 
-    padding:25px; 
-    border-radius:20px; 
-    text-align:left; 
-    line-height: 1.8;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-h1 { 
-    color: #38bdf8; 
-    margin-top: 30px;
-    font-size: 2.5rem;
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
-}
-
-.highlight {
-    color: #facc15;
-    font-weight: bold;
+nav a{
+    color:#38bdf8;
+    text-decoration:none;
+    margin:10px;
 }
 
 </style>
 </head>
+
 <body>
 
+<!-- LOADING -->
 <div id="loading">
     <div class="spinner"></div>
-    <p>Loading About Me...</p>
+    <p>Loading...</p>
 </div>
-<header>
-    <img class="logo" src="1000022537.png" alt="Logo">
-    <h3>Win Lwin Tun</h3>
+
+<!-- NAV -->
 <nav>
-    <a href="index.html" class="nav-link">🏠 Home</a> | 
-    <a href="about.html" class="nav-link" style="color:#facc15;">ℹ️ About Me</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
 </nav>
 
-<h1>About Me</h1>
+<!-- TITLE -->
+<h1>ချောင်းကန်ကျေးရွာ၏ပုံများ</h1>
 
-<div class="card">
-    <h3 style="color:#38bdf8; margin-top:0;">Win Lwin Tun</h3>
-    <p><span class="highlight">Pro Max Developer</span></p>
-    <p>ကျွန်တော်ကတော့ စစ်ကိုင်းတိုင်းဒေသကြီး ကန့်ဘလူမြို့နယ် ချောင်းကန်ကျေးရွာမှာနေထိုင်သောလူငယ်တစ်ယောက်ဖြစ်ပါသည်။</p>
-    <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:20px 0;">
-    <p><b>📍 နေရပ်:</b> ချောင်းကန်ကျေးရွာ</p>
-    <p><b>🚀 ဝါသနာ:</b> Web Design, Pro Max UI</p>
+<!-- GALLERY -->
+<div class="gallery">
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+    <img src="photo4.jpg" alt="">
 </div>
 
 <script>
-/* LOADING REMOVE LOGIC */
+
+/* LOADING REMOVE */
 window.addEventListener("load",()=>{
     setTimeout(()=>{
         document.getElementById("loading").style.display="none";
-    },600); // 0.6 စက္ကန့်ကြာရင် Loading ပျောက်သွားမယ်
+    },600);
 });
+
 </script>
 
 </body>
